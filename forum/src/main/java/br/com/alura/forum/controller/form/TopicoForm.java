@@ -5,36 +5,38 @@ import br.com.alura.forum.modelo.Topico;
 import br.com.alura.forum.repository.CursoRepository;
 
 public class TopicoForm {
-    private String titulo;
-    private String mensagem;
-    private String nomeCurso;
 
-    public String getTitulo() {
-        return titulo;
-    }
+	private String titulo;
+	private String mensagem;
+	private String nomeCurso;
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public String getMensagem() {
-        return mensagem;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
-    }
+	public String getMensagem() {
+		return mensagem;
+	}
 
-    public String getNomeCurso() {
-        return nomeCurso;
-    }
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
+	}
 
-    public void setNomeCurso(String nomeCurso) {
-        this.nomeCurso = nomeCurso;
-    }
+	public String getNomeCurso() {
+		return nomeCurso;
+	}
 
-    public Topico converter(CursoRepository cursoRepository) {
-        Curso curso = cursoRepository.findByNome(nomeCurso);
-        return new Topico(titulo, mensagem, curso);
-    }
+	public void setNomeCurso(String nomeCurso) {
+		this.nomeCurso = nomeCurso;
+	}
+
+	public Topico converter(CursoRepository cursoRepository) {
+		Curso curso = cursoRepository.findByNome(nomeCurso);
+		return new Topico(titulo, mensagem, curso);
+	}
+
 }
